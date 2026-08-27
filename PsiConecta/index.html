@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PsiConecta - Apoio Psicológico</title>
+    <link rel="stylesheet" href="estilo/style.css">
+</head>
+<body>
+
+<header>
+    <button id="btnAcessibilidade" class="btn-acessibilidade" title="Ativar/Desativar Alto Contraste">
+        🌓 Alto Contraste
+    </button>
+    <div class="header-content">
+        <h1>PsiConecta</h1>
+        <p>Conectando esperança e tecnologia em Fazenda Rio Grande</p>
+    </div>
+</header>
+
+<main class="container">
+    <!-- Seção de Ações Principais -->
+    <section class="action-cards">
+        <div class="card-action paciente" id="btnAbrirModalAjuda">
+            <h3>Preciso de Ajuda 🫂</h3>
+            <p>Encontre apoio psicológico gratuito e confidencial.</p>
+            <button class="btn-outline">Solicitar Acolhimento</button>
+        </div>
+        <div class="card-action voluntario" onclick="document.getElementById('form-section').scrollIntoView({behavior: 'smooth'})">
+            <h3>Quero ser Voluntário 💙</h3>
+            <p>Sou profissional de saúde mental e quero ajudar.</p>
+            <button class="btn-outline">Fazer Cadastro</button>
+        </div>
+    </section>
+
+    <!-- Módulo Visual de Agendamento -->
+    <section class="agendamento-section">
+        <h2>Próximos Horários Disponíveis</h2>
+        <p>Conecte-se com um profissional para uma sessão virtual.</p>
+        <div class="profissionais-grid">
+            <div class="prof-card">
+                <h4>Dra. Ana Costa</h4>
+                <p>Psicóloga Clínica</p>
+                <span class="horario">📅 Hoje, 15:00</span>
+                <button class="btn-agendar">Agendar Sessão</button>
+            </div>
+            <div class="prof-card">
+                <h4>Dr. Marcos Silva</h4>
+                <p>Terapia Cognitivo-Comportamental</p>
+                <span class="horario">📅 Amanhã, 09:30</span>
+                <button class="btn-agendar">Agendar Sessão</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Original de Cadastro de Voluntários -->
+    <section id="form-section" class="form-section">
+        <h2>Cadastro de Voluntários</h2>
+        <p>Preencha os dados abaixo para se juntar à nossa rede de apoio.</p>
+        
+        <form id="formCadastro">
+            <div class="form-group">
+                <label for="nome">Nome Completo</label>
+                <input type="text" id="nome" required placeholder="Ex: João Silva">
+            </div>
+
+            <div class="grid-inputs">
+                <div class="form-group">
+                    <label for="registro">CRP / Registro</label>
+                    <input type="text" id="registro" required placeholder="00/0000">
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail Profissional</label>
+                    <input type="email" id="email" required placeholder="exemplo@psi.com">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="mensagem">Breve Resumo da Atuação</label>
+                <textarea id="mensagem" rows="3" placeholder="Conte-nos um pouco sobre sua experiência..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">Finalizar Minha Inscrição</button>
+        </form>
+
+        <div id="mensagemSucesso" class="hidden">
+            <div class="success-content">
+                <span>✅</span>
+                <h3>Cadastro Recebido!</h3>
+                <p>Obrigada por se voluntariar. Nossa equipe validará seu CRP e entrará em contato em breve.</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Modal de Ajuda (Pacientes) -->
+<div id="modalAjuda" class="modal hidden">
+    <div class="modal-content">
+        <span class="close" id="btnFecharModal">&times;</span>
+        <h2>Solicitar Acolhimento</h2>
+        <p>Deixe seu contato de forma segura e um de nossos voluntários enviará uma mensagem para você.</p>
+        <div class="form-group">
+            <label>Como gostaria de ser chamado(a)?</label>
+            <input type="text" placeholder="Seu nome ou apelido">
+        </div>
+        <div class="form-group">
+            <label>WhatsApp ou E-mail para contato</label>
+            <input type="text" placeholder="Deixe seu contato">
+        </div>
+        <button class="btn-submit" id="btnEnviarAjuda">Pedir Ajuda Agora</button>
+    </div>
+</div>
+
+<footer>
+    <p>Atividade Extensionista II - Análise e Desenvolvimento de Sistemas</p>
+    <p><strong>Gabriella Costa Alves | RU: 4196085</strong></p>
+</footer>
+
+<script src="script/script.js"></script>
+</body>
+</html>
